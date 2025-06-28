@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-background flex justify-center items-start">
-      <Card title={data.title || 'Dynamic Form'} className="mt-24">
+      <Card title={data.title || 'Dynamic Form Builder'} className="mt-24">
         <form className="w-full space-y-6" onSubmit={onSubmit}>
           {data.fields.map((field) => (
             <div key={field.name}>

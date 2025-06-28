@@ -9,15 +9,15 @@
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
 
-  --primary: oklch(0.39 0.239 264.78);
+  --primary: oklch(42.4% 0.199 265.638);
   --primary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.9427 0.0058 264.53);
   --muted-foreground: oklch(0.556 0 0);
   --border: oklch(0.42 0.0021 247.87);
-  --input: oklch(0.66 0.0024 17.22);
+  --input: oklch(0.46 0.0013 17.21);
   --ring: oklch(0.556 0 0);
   --card: oklch(0.2653 0.0142 248.36);
-  --card-foreground: oklch(0.985 0 0);
+  --card-foreground: oklch(0.93 0.0032 17.22);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -30,7 +30,7 @@
     --background: oklch(1 0 0);
     --foreground: oklch(0.2653 0.0142 248.36);
 
-    --primary: oklch(0.39 0.239 264.78);
+    --primary: oklch(42.4% 0.199 265.638);
     --primary-foreground: oklch(0.985 0 0);
     --muted: oklch(0.9427 0.0058 264.53);
     --muted-foreground: oklch(0.556 0 0);
@@ -57,14 +57,7 @@
 
 /** components */
 button {
-  @apply w-full bg-primary hover:bg-primary/80 font-medium rounded-lg px-3.5 py-3;
-
-  transition: all 0.25s;
-
-  &:focus,
-  &:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
+  @apply w-full bg-primary hover:bg-primary/80 disabled:bg-primary/50 font-medium rounded-lg transition-all focus-visible:outline-4 focus-visible:outline-primary px-3.5 py-3 cursor-pointer disabled:cursor-not-allowed;
 }
 
 .form-control {
