@@ -1,0 +1,77 @@
+@import 'tailwindcss';
+
+:root {
+  color-scheme: light dark;
+
+  color: var(--foreground);
+  background-color: var(--background);
+
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+
+  --primary: oklch(0.39 0.239 264.78);
+  --primary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.9427 0.0058 264.53);
+  --muted-foreground: oklch(0.556 0 0);
+  --border: oklch(0.42 0.0021 247.87);
+  --input: oklch(0.66 0.0024 17.22);
+  --ring: oklch(0.556 0 0);
+  --card: oklch(0.2653 0.0142 248.36);
+  --card-foreground: oklch(0.985 0 0);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.2653 0.0142 248.36);
+
+    --primary: oklch(0.39 0.239 264.78);
+    --primary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.9427 0.0058 264.53);
+    --muted-foreground: oklch(0.556 0 0);
+    --border: oklch(0.53 0.004 219.56);
+    --input: oklch(0.922 0 0);
+  }
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+}
+
+/** components */
+button {
+  @apply w-full bg-primary hover:bg-primary/80 font-medium rounded-lg px-3.5 py-3;
+
+  transition: all 0.25s;
+
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+}
+
+.form-control {
+  @apply file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-12 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm 
+  focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px];
+}
+
+.form-checkbox {
+  @apply accent-primary disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50;
+}
