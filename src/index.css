@@ -34,8 +34,10 @@
     --primary-foreground: oklch(0.985 0 0);
     --muted: oklch(0.9427 0.0058 264.53);
     --muted-foreground: oklch(0.556 0 0);
-    --border: oklch(0.53 0.004 219.56);
-    --input: oklch(0.922 0 0);
+    --border: oklch(0.84 0 17);
+    --input: oklch(0.756 0 0);
+    --card: oklch(0.93 0.0032 17.22);
+    --card-foreground: oklch(0.2653 0.0142 248.36);
   }
 }
 
@@ -57,7 +59,7 @@
 
 /** components */
 button {
-  @apply w-full bg-primary hover:bg-primary/80 disabled:bg-primary/50 font-medium rounded-lg transition-all focus-visible:outline-4 focus-visible:outline-primary px-3.5 py-3 cursor-pointer disabled:cursor-not-allowed;
+  @apply w-full bg-primary text-primary-foreground hover:bg-primary/80 disabled:bg-primary/50 font-medium rounded-lg transition-all focus-visible:outline-4 focus-visible:outline-primary px-3.5 py-3 cursor-pointer disabled:cursor-not-allowed;
 }
 
 .form-control {

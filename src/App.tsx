@@ -23,8 +23,13 @@ function App() {
       <Card title={data.title || 'Dynamic Form Builder'} className="mt-24">
         <form className="w-full space-y-6" onSubmit={onSubmit}>
           {data.fields.map((field) => (
-            <div key={field.name}>
+            <div key={field.name} className="flex flex-col items-start gap-1">
+              <label htmlFor={field.name} className="capitalize">
+                {field.label}
+              </label>
+
               <input
+                id={field.name}
                 type={field.type}
                 name={field.name}
                 value={field.type === 'checkbox' ? undefined : String(form[field.name])}

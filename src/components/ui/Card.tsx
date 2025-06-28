@@ -12,14 +12,14 @@ export default function Card({ children, title, className }: CardProps) {
   return (
     <div className={clsx('w-full max-w-md bg-card text-card-foreground rounded-lg overflow-hidden', className)}>
       <div className="h-14 flex items-center border-b border-border px-6">
-        <h1 className="text-lg uppercase font-medium truncate">{title}</h1>
+        <h1 className="text-lg uppercase font-semibold truncate">{title}</h1>
       </div>
 
       <div className="px-6 py-8">{children}</div>
 
       <div className="h-14 flex items-center justify-between border-t border-border px-6">
-        <h1 className="text-sm font-medium">{year} Dynamic Form Builder.</h1>
-        <h1 className="text-sm font-medium">All rights reserved</h1>
+        <p className="text-sm font-medium">{year} Dynamic Form Builder.</p>
+        <p className="text-sm font-medium">All rights reserved</p>
       </div>
     </div>
   );
