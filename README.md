@@ -1,70 +1,96 @@
-# React + TypeScript + Vite
+# Dynamic form builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A customizable and extensible dynamic form builder built with [React]. This tool enables users to generate and manage complex form structures through a simple UI or configuration schema. Supports field validation, conditional rendering, and real-time preview.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- 🧱 On-the-fly form field creation
+- 🎯 Built-in validation rules (required, email, min/max, etc.)
+- 🔄 Conditional logic & field visibility
+- 🔍 Live preview of form as you build
+- 📝 Export and import form schemas (JSON)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📦 Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Clone the repository and install dependencies:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/samuelokeke/dynamic-form-builder.git
+cd dynamic-form-builder
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
+
+## 📦 Technologies Used
+
+- Framework: React Typescript
+- State Management: Context API
+- Styling: Tailwind CSS
+- Form Handling: Hooks (useState, Native ChangeEvent & FormEvent)
+
+---
+
+## 📁 Project Structure
+
+```
+dynamic-form-builder/
+├─── public/
+├─── src/
+│     ├─── assets/
+│     ├─── components/
+│     │     ├─── shared/
+│     │     └─── ui/                 # Reusable form input components
+│     │           └─── Card.tsx
+│     ├─── contexts/
+│     │     └─── FormContext.tsx     # Store management
+│     ├─── lib/
+│     │     └─── util.ts
+│     ├─── types/                    # Schema builders, validators, helpers
+│     ├─── App.tsx
+│     ├─── data.json                # Form dynamic JSON data
+│     ├─── index.css
+│     ├─── main.tsx
+│     └─── App.tsx
+└─── README.md
+```
+
+## 📤 Exported JSON Schema Format
 
 ```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+{
+  "title": "User Registration",
+  "fields": [
+    { "label": "First Name", "name": "firstName", "type": "text", "required": true },
+    { "label": "Last Name", "name": "lastName", "type": "text", "required": true },
+    { "label": "Email", "name": "email", "type": "email", "required": true },
+    { "label": "Age", "name": "age", "type": "number" },
+    { "label": "Subscribe to Newsletter", "name": "newsletter", "type": "checkbox" }
+  ]
+}
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
-# dynamic-form-builder
+
+---
+
+## 🧪 Testing (Development)
+
+```bash
+npm run dev
+```
+
+## 🧪 Production
+
+```bash
+npm run build
+```
+
+---
+
+## 🧑‍💻 Author
+
+Made with ❤️ by Samuel Okeke

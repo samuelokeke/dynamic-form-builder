@@ -25,7 +25,7 @@ function App() {
           {data.fields.map((field) => (
             <div key={field.name} className="flex flex-col items-start gap-1">
               <label htmlFor={field.name} className="capitalize">
-                {field.label}
+                {field.label} {field.required && <span className="text-red-500">*</span>}
               </label>
 
               <input
@@ -36,6 +36,7 @@ function App() {
                 checked={field.type === 'checkbox' ? Boolean(form[field.name]) : undefined}
                 onChange={handleChange}
                 placeholder={field.label}
+                required={field.required}
                 className={field.type === 'checkbox' ? 'form-checkbox' : 'form-control'}
               />
             </div>
